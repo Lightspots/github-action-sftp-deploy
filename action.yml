@@ -1,0 +1,32 @@
+name: "sftp-deploy-action"
+description: "Mirror files in github actions with sftp to a server"
+inputs:
+  host:
+    description: "SFTP host, include port with :<port>"
+    required: true
+  username:
+    description: "SFTP user"
+    required: true
+  password:
+    description: "SFTP password"
+    required: true
+  known_hosts:
+    description: "Content of the .ssh/known_hosts file"
+    required: false
+  lftp_mirror_args:
+    description: "Arguments to lftp mirror command"
+    default: "--reverse --continue --dereference"
+  source:
+    description: "Local source directory"
+    required: false
+    default: "."
+  remote:
+    description: "Remote directory"
+    required: false
+    default: "."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  color: "blue"
+  icon: "upload"
