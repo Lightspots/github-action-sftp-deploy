@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 LFTP_MIRROR_ARGS="--reverse --continue --dereference"
 
