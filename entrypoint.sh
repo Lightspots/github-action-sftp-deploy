@@ -6,7 +6,7 @@ export LFTP_MIRROR_ARGS="--reverse --continue --dereference"
 
 if [ ! -z "$INPUT_LFTP_MIRROR_ARGS" ]
 then
-  export LFTP_MIRROR_ARGS=$INPUT_LFTP_MIRROR_ARGS
+  export LFTP_MIRROR_ARGS="$INPUT_LFTP_MIRROR_ARGS"
 fi
 
 echo "Using the following mirror args: $LFTP_MIRROR_ARGS"
